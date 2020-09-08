@@ -10,8 +10,11 @@ export const CreatePage = () => {
     const {request} = useHttp()
     const [link, setLink] = useState('')
 
+    useEffect(() => {
+        window.M.updateTextFields()
+    }, [])
+
     const pressHandler = async (e) => {
-        e.preventDefault()
         if (e.key === 'Enter') {
             try {
                 const data = await request('/api/link/generate', 'POST', {from: link}, {
@@ -22,9 +25,7 @@ export const CreatePage = () => {
             }
         }
     }
-    useEffect(() => {
-        window.M.updateTextFields()
-    }, [])
+
 
     return (
         <div className={'row'}>

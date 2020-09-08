@@ -4,7 +4,8 @@ import React from "react";
 export const Loader = () => {
 
     return (
-        <div className="preloader-wrapper big active" style={{display: 'flex', justifyContent:'center', paddingTop:'2rem'}}>
+        <div style={{display: 'flex', justifyContent:'center', paddingTop:'2rem'}}>
+        <div className="preloader-wrapper big active" >
             <div className="spinner-layer spinner-green-only">
                 <div className="circle-clipper left">
                     <div className="circle"/>
@@ -16,6 +17,7 @@ export const Loader = () => {
                     <div className="circle"/>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
