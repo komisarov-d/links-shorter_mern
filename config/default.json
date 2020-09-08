@@ -1,5 +1,6 @@
 {
   "port": 5000,
   "jwtSecret": "dmitriy mern",
-  "mongoUri": "mongodb+srv://dmitriy:komisarov123@mern-cluster.ixure.gcp.mongodb.net/app?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://dmitriy:komisarov123@mern-cluster.ixure.gcp.mongodb.net/app?retryWrites=true&w=majority",
+  "baseUrl": "http://locahost:5000"
 }

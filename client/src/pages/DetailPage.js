@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 
 
 export const DetailPage = () => {
-    return(
-        <div>
-            <h1>detail</h1>
-        </div>
 
+    const [link, setLink] = useState(null)
+
+    return (
+        <div>
+            <h1>Detail page</h1>
+        </div>
     )
 }

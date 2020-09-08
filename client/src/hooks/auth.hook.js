@@ -5,6 +5,7 @@ const storageName = 'userData'
 export const useAuth = () => {
     const [token, setToken] = useState(null)
     const [userId, setUserId] = useState(null)
+    const [ready, setReady] = useState(false)
 
     const login = useCallback((jwtToken, id) => {
         setToken(jwtToken)
@@ -24,7 +25,8 @@ export const useAuth = () => {
         if (data && data.token){
             login(data.token, data.userId)
         }
+        setReady(true)
     },[login])
 
-    return{logout, login, token, userId}
+    return{logout, login, token, userId, ready}
 }
