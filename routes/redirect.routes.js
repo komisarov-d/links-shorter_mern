@@ -4,7 +4,6 @@ const Link = require('../models/Link')
 
 router.get('/:code', async (req, res) => {
     try {
-
         const link = await Link.findOne({code: req.params.code})
         if (link) {
             link.clicks++
