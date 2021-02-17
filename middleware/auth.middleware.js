@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const config = require('../config/default.json')
+const config = require('config')
 
 module.exports = (req, res, next) => {
     if (req.method === 'OPTIONS') {
@@ -8,12 +8,12 @@ module.exports = (req, res, next) => {
     try {
         const token = req.headers.authorization.split(' ')[1]
         if (!token) {
-            return res.status(401).json({message: 'Вы не авторизованы'})
+            return res.status(401).json({ message: 'Вы не авторизованы' })
         }
-        const decoded = jwt.verify(token, config.jwtSecret)
+        const decoded = jwt.verify(token, config.get('jwtSecret'))
         req.user = decoded
         next()
     } catch (e) {
-        res.status(401).json({message: 'Вы не авторизованы'})
+        res.status(401).json({ message: 'Вы не авторизованы' })
     }
 }
