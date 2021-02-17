@@ -3,7 +3,7 @@ const express = require('express')
 const config = require('config')
 const app = express()
 const path = require('path')
-
+const PORT = process.env.PORT || 5000
 
 app.use(express.json({ extended: true }))
 
@@ -21,8 +21,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
-const PORT = config.get('port') || 5000
-
 async function start() {
     try {
         await mongoose.connect(config.get('mongoUri'), {
@@ -30,7 +28,7 @@ async function start() {
             useUnifiedTopology: true,
             useCreateIndex: true
         })
-        app.listen(process.env.PORT || PORT, () => {
+        app.listen(PORT, () => {
             console.log(`App has been started on port ${PORT}...`)
         })
     } catch (e) {
