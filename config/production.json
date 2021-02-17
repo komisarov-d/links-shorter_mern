@@ -1,5 +1,5 @@
 {
-  "port": 80,
+  "port": 8080,
   "jwtSecret": "dmitriy mern",
   "mongoUri": "mongodb+srv://dmitriy:dmitriy123@cluster0.mr0mj.mongodb.net/links-shorter",
   "baseUrl": " https://links-shorter-port.herokuapp.com"
